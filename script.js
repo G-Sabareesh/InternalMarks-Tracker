@@ -121,6 +121,7 @@ function deleteMark(index) {
   saveMarksToLocalStorage();
   renderMarks();
   showPopupWithCloseButton("successfully deleted");
+  setTimeout(() => { location.reload() }, 1000);
 }
 
 function restoreData(data) {
@@ -157,7 +158,7 @@ function showPopupWithCloseButton(message) {
   closeButton.addEventListener("click", hidePopup);
 
   // Automatically hide the popup after 5 seconds
-  setTimeout(hidePopup, 5000); // 5000 milliseconds (5 seconds)
+  setTimeout(hidePopup, 2000); // 5000 milliseconds (5 seconds)
 }
 
 // Function to hide the popup
