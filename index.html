@@ -4,13 +4,13 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Internal Marks</title>
+    <title>Internal Marks Tracker</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 	<div class="popup-box">
 			<button class="close-button" id="closeButton"></button>
-			<p class="popup-message"></p>
+			<p class="popup-message" id="popup"></p>
 	</div>
 	<div class="heading" align="center">
 		Internal Mark
@@ -34,19 +34,21 @@
 					<input class="inputBox" type="text" inputmode="numeric" size=3 id="mark3" maxlength="2" autocomplete=off placeholder="00"></input>
 				</div>
 				<span id="avg"></span>
+				<div class="frmbtn">
 				<button type="submit" id="addButton">Add</button>
 				<button id="cancelButton">Cancel</button>
+				</div>
 			</form>
 		</section>
 	</div>
 	<section class="list">
-		<span id="message"></span>
 		<table id="markList" align="center"></table>
-		<span id="btn">
-			<button id="newbtn"> &#43;NEW</button>
-			<button id="deleteAllBtn">Delete All Marks</button>
-		</span>
+		<span id="message"></span>
 	</section>
+	<span id="btn">
+		<button id="newbtn"> &#43;NEW</button>
+		<button id="deleteAllBtn">Delete All Marks</button>
+	</span>
 	<script src="script.js"></script>
 </body>
 </html>
