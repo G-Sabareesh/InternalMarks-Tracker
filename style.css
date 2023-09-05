@@ -77,10 +77,19 @@ form button {
   cursor: pointer;
   font-size: large;
   color: black;
-  margin-top: 5px;
   padding: 5px 10px;
   border-radius: 5px;
+  margin: 2px;
   border: 2px solid #4a48489a;
+}
+.frmbtn {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  flex-direction: row;
+  padding: 2%;
 }
 .list {
   position: relative;
@@ -93,7 +102,9 @@ form button {
   border: none;
   padding: 5px;
   width: 100%;
+  height: fit-content;
   overflow-x: auto;
+  overflow-y: hidden;
 }
 table {
   /* background-color: green; */
@@ -130,37 +141,53 @@ section table tr td button {
 #btn {
   display: flex;
   align-items: center;
-  justify-content: flex-end;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  flex-direction: row;
 }
 #btn button {
   cursor: pointer;
   font-size: medium;
-  font-weight: bolder;
+  font-weight: bold;
   font-style: italic;
   color: black;
-  padding: 4px 10px 4px 10px;
-  margin: 15px;
+  padding: 4px 8px 4px 8px;
+  margin: 10px;
   border-radius: 5px;
   border: 2px solid #4a48489a;
 }
 .popup-box {
   display: none;
+  position: absolute;
+  flex-direction: row;
+  z-index: 999;
+  height: fit-content;
+  width: fit-content;
+  background-color: rgb(255, 255, 255);
+  color: black;
   align-items: center;
   justify-content: space-between;
   margin: 10px;
   padding: 0px 5px 0px 0px;
   border-radius: 5px;
-  border: 2px solid #4a48489a;
+  border: 3px solid rgba(0, 0, 0, 0.671);
 }
 #closeButton {
   cursor: pointer;
   font-size: medium;
-  color: red;
+  color: black;
   margin: 5px;
   padding: 5px;
   border-radius: 5px;
   background-color: #ddb9b928;
   border: 1px solid #4a48489a;
+}
+#popup {
+  background: none;
+  color: black;
+  font-size: medium;
+  font-weight: bold;
+  font-style: normal;
 }
 
 #message {
