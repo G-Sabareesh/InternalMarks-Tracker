@@ -1,0 +1,168 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  letter-spacing: 2px;
+  font-family: sans-serif;
+  cursor: default;
+}
+body {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100vw;
+  font-family: Arial, sans-serif;
+  color: maroon;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+#container {
+  height: fit-content;
+  width: fit-content;
+  padding: 10px;
+}
+
+section {
+  background-color: #ffffff2d;
+  border-radius: 5px;
+  border: 2px #4a48489a ridge;
+  width: fit-content(20em);
+  margin: 10px;
+  padding: 5px;
+}
+.heading {
+  box-shadow: rgba(0, 0, 0, 0.356) 0px 3px;
+  color: maroon;
+  font-size: x-large;
+  font-style: italic;
+  font-variant: small-caps;
+  font-weight: bolder;
+  padding: 5px;
+  margin-top: 2px;
+  border-radius: 8px;
+  margin-bottom: 5px;
+}
+form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 10px;
+}
+.display {
+  text-align: center;
+  font-size: larger;
+  margin: 8px;
+  padding: 8px;
+}
+.inputBox {
+  font-size: 15px;
+  font-weight: bold;
+  padding: 2px 5px;
+  text-align: center;
+  border: 1px solid black;
+}
+form #name {
+  padding: 6px;
+  margin: 5px;
+  width: 90%;
+}
+form input {
+  outline: none;
+}
+form button {
+  cursor: pointer;
+  font-size: large;
+  color: black;
+  margin-top: 5px;
+  padding: 5px 10px;
+  border-radius: 5px;
+  border: 2px solid #4a48489a;
+}
+.list {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  /* background-color: darkred; */
+  border: none;
+  padding: 5px;
+  width: 100%;
+  overflow-x: auto;
+}
+table {
+  /* background-color: green; */
+  padding: 2px;
+  text-align: center;
+  border-color: black;
+  border-collapse: collapse;
+}
+table tr th {
+  padding: 6px;
+  /* background-color: violet; */
+  font-weight: bold;
+  font-size: medium;
+  border: 1px solid;
+}
+
+table tr td {
+  font-size: medium;
+  margin: 1px;
+  padding: 2px;
+  font-size: large;
+  border: 1px solid;
+  /* background-color: blue; */
+}
+section table tr td button {
+  cursor: pointer;
+  font-size: small;
+  color: black;
+  padding: 5px;
+  margin: 3px;
+  border-radius: 5px;
+  border: 2px solid #4a48489a;
+}
+#btn {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+#btn button {
+  cursor: pointer;
+  font-size: medium;
+  font-weight: bolder;
+  font-style: italic;
+  color: black;
+  padding: 4px 10px 4px 10px;
+  margin: 15px;
+  border-radius: 5px;
+  border: 2px solid #4a48489a;
+}
+.popup-box {
+  display: none;
+  align-items: center;
+  justify-content: space-between;
+  margin: 10px;
+  padding: 0px 5px 0px 0px;
+  border-radius: 5px;
+  border: 2px solid #4a48489a;
+}
+#closeButton {
+  cursor: pointer;
+  font-size: medium;
+  color: red;
+  margin: 5px;
+  padding: 5px;
+  border-radius: 5px;
+  background-color: #ddb9b928;
+  border: 1px solid #4a48489a;
+}
+
+#message {
+  display: none;
+}

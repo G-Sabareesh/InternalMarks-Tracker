@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Internal Marks</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+	<div class="popup-box">
+			<button class="close-button" id="closeButton"></button>
+			<p class="popup-message"></p>
+	</div>
+	<div class="heading" align="center">
+		Internal Mark
+	</div>
+	<div id="container">
+		<section>
+			<form id="markForm">
+				<div class="subjectName">
+					<input class="inputBox" type="text" id="name" placeholder="Subject Name" autocomplete="off" maxlength =20 required></input>
+				</div>
+				<div class="display">
+					<label for="mark1">1<sup>st</sup>Internal : </label>
+					<input class="inputBox" type="text" inputmode="numeric" size=3 id="mark1"  maxlength="2" autocomplete=off placeholder="00" required></input> 
+				</div>
+				<div class="display">
+					<label for="mark2">2<sup>nd</sup>Internal : </label>
+					<input class="inputBox" type="text" inputmode="numeric" size=3 id="mark2"  maxlength="2" autocomplete=off placeholder="00"></input>
+				</div>
+				<div class="display">
+					<label for="mark23">3<sup>rd</sup>Internal : </label>
+					<input class="inputBox" type="text" inputmode="numeric" size=3 id="mark3" maxlength="2" autocomplete=off placeholder="00"></input>
+				</div>
+				<span id="avg"></span>
+				<button type="submit" id="addButton">Add</button>
+				<button id="cancelButton">Cancel</button>
+			</form>
+		</section>
+	</div>
+	<section class="list">
+		<span id="message"></span>
+		<table id="markList" align="center"></table>
+		<span id="btn">
+			<button id="newbtn"> &#43;NEW</button>
+			<button id="deleteAllBtn">Delete All Marks</button>
+		</span>
+	</section>
+	<script src="script.js"></script>
+</body>
+</html>
