@@ -6,7 +6,7 @@ notload.forEach((element) => {
 const markForm = document.getElementById("markForm");
 const addButton = document.getElementById("addButton");
 const markList = document.getElementById("markList");
-const container = document.getElementById("container");
+const container = document.getElementById("form-container");
 var newBtn = document.getElementById("newbtn");
 const cancelButton = document.getElementById("cancelButton");
 
@@ -19,7 +19,16 @@ function saveMarksToLocalStorage() {
 }
 
 function renderMarks() {
-  if (marks.length !== 0) {
+  if (marks.length === 0) {
+    document.getElementById("deleteAllBtn").style.display = "none";
+    setTimeout(() => {
+      document.getElementById("message").style.display = "block";
+    }, 1000);
+  } else {
+    setTimeout(() => {
+      document.getElementById("deleteAllBtn").style.display = "flex";
+    }, 2000);
+
     markList.innerHTML = `<tr><th>Name</th><th>Mark1</th><th>Mark2</th><th>Mark3</th><th>Average</th><th colspan="2">Option</th></tr>`;
     marks.forEach((mark, index) => {
       const listItem = document.createElement("tr");
@@ -34,7 +43,6 @@ function renderMarks() {
     });
     addButton.textContent = editingIndex === -1 ? "Add" : "Edit";
   }
-  //  else { document.getElementById("message").textContent = "No data founded"; document.getElementById('message').style.display = 'block'; }
 }
 
 function addMark(event) {
@@ -121,7 +129,9 @@ function deleteMark(index) {
   saveMarksToLocalStorage();
   renderMarks();
   showPopupWithCloseButton("successfully deleted");
-  setTimeout(() => { location.reload() }, 1000);
+  setTimeout(() => {
+    location.reload();
+  }, 1000);
 }
 
 function restoreData(data) {
@@ -133,11 +143,14 @@ function restoreData(data) {
 
 function toggleEvent() {
   container.style.display === "none"
-    ? (markForm.reset(), (container.style.display = "flex"))
+    ? (markForm.reset(),
+      (container.style.display = "flex"),
+      (document.getElementById("message").style.display = "none"))
     : editingIndex !== -1
       ? (markForm.reset(),
         (container.style.display = "flex"),
-        (addButton.textContent = "Add"))
+        cancelEdit(),
+        toggleEvent())
       : (container.style.display = "none");
 }
 
@@ -185,23 +198,24 @@ document.getElementById("deleteAllBtn").addEventListener("click", () => {
     localStorage.removeItem("marks");
     marks = []; // Clear the marks array as well
     saveMarksToLocalStorage();
-
-    renderMarks();
-
     // Display a popup message after successful deletion
     showPopupWithCloseButton("All marks have been deleted successfully.");
-    setTimeout(() => { location.reload() }, 1000);
+    setTimeout(() => {
+      renderMarks();
+      location.reload();
+    }, 1000);
   }
 });
 
 document.addEventListener("visibilitychange", function () {
+  let originalTitle = 'Internal Marks'
   if (document.hidden) {
     document.title = "😢 Come back! We miss you!";
     clearTimeout(originalTitle);
   } else {
     document.title = "🙂 Welcome back!";
     // Regardless of the condition, revert to the default title after 5 seconds
-    originalTitle = setTimeout(function () {
+    setTimeout(function () {
       document.title = "Internal Marks"; // Replace with your actual default title
     }, 2000); // Run after 2 seconds
   }
