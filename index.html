@@ -8,47 +8,55 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-	<div class="popup-box">
-			<button class="close-button" id="closeButton"></button>
-			<p class="popup-message" id="popup"></p>
+	<div class="whole">
+		<div class="heading" align="center">
+			Internal Mark
+		</div>
+		<div class="popup-box">
+			<button class="close-button" id="closeButton">X</button>
+			<p class="popup-message" id="popup">Successfully deleted</p>
+		</div>
+		<div class="main-content">
+			<div id="form-container">
+				<section>
+					<form id="markForm">
+						<div class="subjectName">
+							<input class="inputBox" type="text" id="name" placeholder="Subject Name" autocomplete="off" maxlength =20 required></input>
+						</div>
+						<div class="display">
+							<label for="mark1">1<sup>st</sup>Internal : </label>
+							<input class="inputBox" type="text" inputmode="numeric" size=3 id="mark1"  maxlength="2" autocomplete=off placeholder="00" required></input> 
+						</div>
+						<div class="display">
+							<label for="mark2">2<sup>nd</sup>Internal : </label>
+							<input class="inputBox" type="text" inputmode="numeric" size=3 id="mark2"  maxlength="2" autocomplete=off placeholder="00"></input>
+						</div>
+						<div class="display">
+							<label for="mark23">3<sup>rd</sup>Internal : </label>
+							<input class="inputBox" type="text" inputmode="numeric" size=3 id="mark3" maxlength="2" autocomplete=off placeholder="00"></input>
+						</div>
+						<span id="avg"></span>
+						<div class="frmbtn">
+						<button type="submit" id="addButton">Add</button>
+						<button id="cancelButton">Cancel</button>
+						</div>
+					</form>
+				</section>
+			</div>
+			<div class="table-container">
+				<section class="list">
+					<table id="markList" align="center"></table>
+					<span id="message">No data founded</span>
+				</section>
+			</div>
+		</div>
+		<div class="process-button">
+			<span id="btn">
+				<button id="newbtn"> &#43;NEW</button>
+				<button id="deleteAllBtn">Delete All Marks</button>
+			</span>
+		</div>
 	</div>
-	<div class="heading" align="center">
-		Internal Mark
-	</div>
-	<div id="container">
-		<section>
-			<form id="markForm">
-				<div class="subjectName">
-					<input class="inputBox" type="text" id="name" placeholder="Subject Name" autocomplete="off" maxlength =20 required></input>
-				</div>
-				<div class="display">
-					<label for="mark1">1<sup>st</sup>Internal : </label>
-					<input class="inputBox" type="text" inputmode="numeric" size=3 id="mark1"  maxlength="2" autocomplete=off placeholder="00" required></input> 
-				</div>
-				<div class="display">
-					<label for="mark2">2<sup>nd</sup>Internal : </label>
-					<input class="inputBox" type="text" inputmode="numeric" size=3 id="mark2"  maxlength="2" autocomplete=off placeholder="00"></input>
-				</div>
-				<div class="display">
-					<label for="mark23">3<sup>rd</sup>Internal : </label>
-					<input class="inputBox" type="text" inputmode="numeric" size=3 id="mark3" maxlength="2" autocomplete=off placeholder="00"></input>
-				</div>
-				<span id="avg"></span>
-				<div class="frmbtn">
-				<button type="submit" id="addButton">Add</button>
-				<button id="cancelButton">Cancel</button>
-				</div>
-			</form>
-		</section>
-	</div>
-	<section class="list">
-		<table id="markList" align="center"></table>
-		<span id="message"></span>
-	</section>
-	<span id="btn">
-		<button id="newbtn"> &#43;NEW</button>
-		<button id="deleteAllBtn">Delete All Marks</button>
-	</span>
 	<script src="script.js"></script>
 </body>
 </html>
