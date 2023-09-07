@@ -7,33 +7,34 @@
   cursor: default;
 }
 body {
+  background-color: wheat;
   display: flex;
   flex-direction: column;
   flex-wrap: nowrap;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  height: auto;
+  width: 100vw;
+  overflow-x: hidden;
+}
+/* its cover the whole page */
+.whole {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+  height: fit-content;
   width: 100vw;
   font-family: Arial, sans-serif;
   color: maroon;
   background-size: cover;
   background-repeat: no-repeat;
+  overflow-y: auto;
 }
-#container {
-  height: fit-content;
-  width: fit-content;
-  padding: 10px;
-}
-
-section {
-  background-color: #ffffff2d;
-  border-radius: 5px;
-  border: 2px #4a48489a ridge;
-  width: fit-content(20em);
-  margin: 10px;
-  padding: 5px;
-}
+/* this style for heading */
 .heading {
+  /* background-color: white; */
   box-shadow: rgba(0, 0, 0, 0.356) 0px 3px;
   color: maroon;
   font-size: x-large;
@@ -41,15 +42,86 @@ section {
   font-variant: small-caps;
   font-weight: bolder;
   padding: 5px;
-  margin-top: 2px;
+  margin: 10px;
   border-radius: 8px;
-  margin-bottom: 5px;
 }
+/* this style the popup box and this for x class="close-button" id="closeButton" and this for message class="popup-message" id="popup"  */
+.popup-box {
+  display: none;
+  position: absolute;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  height: fit-content;
+  width: fit-content;
+  background-color: rgba(255, 255, 255, 0.747);
+  color: black;
+  margin: 10px;
+  padding: 2px 5px 2px 5px;
+  border-radius: 5px;
+  border: 1px solid rgba(0, 0, 0, 0.671);
+  z-index: 999;
+}
+#closeButton {
+  cursor: pointer;
+  font-size: medium;
+  font-weight: bolder;
+  background-color: #e9e5e5a6;
+  color: rgba(240, 64, 64, 0.932);
+  margin: 5px;
+  padding: 5px;
+  border-radius: 5px;
+  border: 1.5px solid #000000;
+}
+#popup {
+  background-color: #e9e5e56e;
+  color: black;
+  font-size: medium;
+  font-weight: bold;
+  font-style: normal;
+}
+/* its for main-content  */
+.main-content {
+  /* background: blue; */
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: center;
+  align-items: center;
+  height: auto;
+  width: 100%;
+  padding: 20px;
+}
+/* section common for form and table */
+section {
+  background-color: #ffffff23;
+  border-radius: 5px;
+  width: fit-content(20em);
+  margin: 10px;
+  padding: 5px;
+  border: 2px #4a48489a ridge;
+}
+
+/* its for form-container */
+#form-container {
+  /* background-color: white; */
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  height: fit-content;
+  width: fit-content;
+  padding: 5px;
+}
+/* the below style for form */
 form {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  flex-wrap: wrap;
   margin: 10px;
 }
 .display {
@@ -69,6 +141,7 @@ form #name {
   padding: 6px;
   margin: 5px;
   width: 90%;
+  /* background-color: blue; */
 }
 form input {
   outline: none;
@@ -91,20 +164,22 @@ form button {
   flex-direction: row;
   padding: 2%;
 }
-.list {
-  position: relative;
+/* the above style for form */
+/* the below style for table */
+.table-container {
+  /* position: relative; */
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  /* background-color: darkred; */
-  border: none;
-  padding: 5px;
+  /* border: none; */
   width: 100%;
   height: fit-content;
   overflow-x: auto;
-  overflow-y: hidden;
+}
+.table-container section {
+  border: none;
 }
 table {
   /* background-color: green; */
@@ -138,6 +213,14 @@ section table tr td button {
   border-radius: 5px;
   border: 2px solid #4a48489a;
 }
+/* message for no data found  */
+#message {
+  display: none;
+  font-size: large;
+  font-weight: bold;
+  font-style: normal;
+}
+/* this for process button */
 #btn {
   display: flex;
   align-items: center;
@@ -152,44 +235,10 @@ section table tr td button {
   font-style: italic;
   color: black;
   padding: 4px 8px 4px 8px;
-  margin: 10px;
+  margin: 5px;
   border-radius: 5px;
   border: 2px solid #4a48489a;
 }
-.popup-box {
-  display: none;
-  position: absolute;
-  flex-direction: row;
-  z-index: 999;
-  height: fit-content;
-  width: fit-content;
-  background-color: rgb(255, 255, 255);
-  color: black;
-  align-items: center;
-  justify-content: space-between;
-  margin: 10px;
-  padding: 0px 5px 0px 0px;
-  border-radius: 5px;
-  border: 3px solid rgba(0, 0, 0, 0.671);
-}
-#closeButton {
-  cursor: pointer;
-  font-size: medium;
-  color: black;
-  margin: 5px;
-  padding: 5px;
-  border-radius: 5px;
-  background-color: #ddb9b928;
-  border: 1px solid #4a48489a;
-}
-#popup {
-  background: none;
-  color: black;
-  font-size: medium;
-  font-weight: bold;
-  font-style: normal;
-}
-
-#message {
-  display: none;
+#newbtn {
+  display: flex;
 }
